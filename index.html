@@ -486,6 +486,123 @@ details.signs-details .signs{margin-top:12px;margin-bottom:0;}
 .soft-invite{font-size:16px;color:var(--ink-soft);text-align:center;margin-top:18px;}
 .footer-links a{font-size:15px;}
 
+/* ============ ROUND 2: textures, tree detail, guides, larger type ============ */
+:root{
+  --page-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.16 0 0 0 0 0.08 0 0 0 0.32 -0.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  :root{--page-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.92 0 0 0 0 0.8 0 0 0 0.3 -0.11'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+}
+body{background-color:var(--bg);background-image:var(--page-grain);}
+.hero{background:
+  repeating-radial-gradient(circle at 50% 44%, rgba(255,255,255,0) 0 21px, rgba(255,255,255,0.06) 22px 23.5px, rgba(255,255,255,0) 25px 33px),
+  repeating-radial-gradient(circle at 50% 44%, rgba(0,0,0,0) 0 49px, rgba(60,30,0,0.07) 50px 52px, rgba(0,0,0,0) 53px 71px),
+  radial-gradient(ellipse 65% 55% at 50% 40%, #A6752A 0%, #8B5E1A 55%, #744D12 100%);}
+.hero::before{opacity:0.45;}
+
+/* Canopy sway, once, after the tree assembles */
+.assemble .piece-wrap.sway{animation:pieceIn 0.8s cubic-bezier(.2,.7,.2,1) forwards, sway 3s ease-in-out 2.2s 1;transform-origin:160px 170px;}
+@keyframes sway{0%{transform:rotate(0deg);}30%{transform:rotate(1.1deg);}65%{transform:rotate(-0.7deg);}100%{transform:rotate(0deg);}}
+@media (prefers-reduced-motion: reduce){.assemble .piece-wrap.sway{animation:none;opacity:1;}}
+
+/* Practice guides */
+.practice-item{border-bottom:1px solid var(--line);padding:6px 0 8px;}
+.practice-item:last-of-type{border-bottom:none;}
+.guide-toggle{background:none;border:none;color:var(--domain-color);font-family:'Barlow',sans-serif;font-weight:600;font-size:16px;cursor:pointer;margin-left:28px;padding:2px 0;}
+.guide{display:none;margin:10px 0 6px 28px;padding:16px 18px;background:var(--bg-deep);border-radius:12px;border-left:3px solid var(--domain-color);}
+.guide.open{display:block;}
+.guide p,.care-plan-guide p{font-size:17px;color:var(--ink);line-height:1.65;margin-bottom:10px;}
+.guide p:last-child,.care-plan-guide p:last-child{margin-bottom:0;}
+.guide p strong,.care-plan-guide p strong{color:var(--domain-color);}
+.care-plan-guide{margin:4px 0 16px 16px;padding-left:14px;border-left:2px solid var(--line);}
+.care-plan-guide p{font-size:15px;}
+
+/* Larger type, round two */
+body{font-size:19px;}
+.lead{font-size:19px;}
+.hero-eyebrow{font-size:13px;}
+.hero-tagline{font-size:27px;}
+.hero-sub{font-size:18px;max-width:560px;}
+.hero-link{font-size:17px;}
+.mode-btn{font-size:15px;}
+.nav-btn{font-size:13px;}
+.section-title{font-size:33px;}
+.domain-name{font-size:32px;}
+.domain-score-display{font-size:32px;}
+.domain-prompt{font-size:22px;}
+.reflection-area{font-size:18px;}
+.slider-hint{font-size:15px;}
+.card-sub{font-size:15px;}
+.restore-btn{font-size:15px;}
+.restore-item{font-size:17px;}
+.practice-picker-label,.story-links-label,.story-card-label{font-size:15px;}
+.practice-option-text{font-size:17px;}
+.practice-limit-note{font-size:15px;}
+.practice-custom{font-size:18px;}
+.info-field label{font-size:15px;}
+.info-field input,.info-field textarea,.info-field select{font-size:18px;}
+.crisis-banner p,.privacy-note{font-size:17px;}
+.crisis-banner-title{font-size:15px;}
+.interpretation{font-size:21px;}
+.tree-caption{font-size:17px;}
+.total-label{font-size:14px;}
+.dbar-label{font-size:15px;width:140px;}
+.dbar-num{font-size:18px;}
+.personal-section-title{font-size:30px;}
+.strength-block p,.growth-block li{font-size:18px;}
+.strength-block-title,.growth-block-title{font-size:16px;}
+.reminder-banner p{font-size:20px;}
+.care-plan-title{font-size:32px;}
+.care-plan-meta{font-size:15px;}
+.care-plan-practice-item{font-size:17px;}
+.care-plan-domain-name{font-size:24px;}
+.care-plan-domain-score{font-size:16px;}
+.history-table{font-size:16px;}
+.history-table th{font-size:13px;}
+.client-row-name{font-size:19px;}
+.client-row-meta{font-size:15px;}
+.btn{font-size:16px;}
+.toast{font-size:16px;}
+.story-card-title{font-size:24px;}
+.story-card-snippet{font-size:20px;}
+.story-card a{font-size:16px;}
+.story-links a{font-size:20px;}
+.quote-card-text{font-size:clamp(24px,3.8vw,31px);}
+.quote-card-source{font-size:16px;}
+.save-box-title{font-size:27px;}
+.save-box p{font-size:17px;}
+.maker-card p{font-size:19px;}
+.footer-grounded-text{font-size:19px;}
+.footer-credit-text{font-size:16px;}
+.footer-privacy{font-size:15px;}
+.footer-copyright{font-size:13px;}
+.footer-links a{font-size:17px;}
+.progress-note{font-size:16px;}
+.care-plan-story{font-size:15px;}
+.part-card-name{font-size:30px;}
+.part-card-domain{font-size:15px;}
+.part-card p{font-size:18px;}
+.parts-tree-hint{font-size:16px;}
+.step-count{font-size:15px;}
+.step-title{font-size:52px;}
+.step-domain{font-size:26px;}
+.step-label{font-size:15px;}
+.step-block p{font-size:18px;}
+.signs-col li{font-size:18px;}
+.signs-col li::before{top:15px;}
+.step-dot{font-size:13px;}
+details.signs-details summary{font-size:15px;}
+.invite-title{font-size:28px;}
+.invite p{font-size:18px;}
+.soft-invite{font-size:18px;}
+.text-link{font-size:inherit;}
+@media(max-width:640px){
+  body,.lead{font-size:18px;}
+  .step-title{font-size:44px;}
+  .domain-prompt{font-size:21px;}
+  .dbar-label{width:110px;font-size:14px;}
+}
+
 </style>
 </head>
 <body>
@@ -961,6 +1078,277 @@ const ABOUT_TEXT = {
   hope: 'Where do you find hope outside of your faith, your mind, your sense of meaning, your body, or your community?'
 };
 
+
+// =====================================================================
+// PRACTICE GUIDES: how to actually do each practice
+// =====================================================================
+const GUIDES = {
+ "holy|Prayer": {
+  "why": "Prayer is honest conversation with the sacred. You don't have to get the words right. Saying the true thing out loud loosens its grip on you.",
+  "today": "Find two quiet minutes. Say, or write, three sentences: what you're thankful for, what you're carrying, and what you need. That's a whole prayer.",
+  "build": "Pick one anchor in your day, like your first coffee or the drive home, and pray there daily for two weeks. Keep a short list of what you pray for, and notice what changes.",
+  "hard": "If you don't know who you're talking to anymore, say so. \"I don't know if you're there, but here's what's true\" is a real prayer. Silence counts too.",
+  "story": "Prayer."
+ },
+ "holy|Ritual": {
+  "why": "Ritual gives the sacred a shape your body can feel. Lighting a candle or washing your hands with intention tells your whole self: this moment matters.",
+  "today": "Light a candle, or pour a glass of water. Before you begin, name one thing you're setting down and one thing you're inviting in. Sit with it for one minute.",
+  "build": "Create one weekly ritual, like Sunday evening or the first morning of the month. Use the same object each time so it gathers meaning. Keep it simple enough to never skip.",
+  "hard": "If ritual feels fake or too churchy, borrow from ordinary life: a slow walk to the mailbox, a deliberate cup of tea. Intention is what makes it sacred, not the props."
+ },
+ "holy|Teach": {
+  "why": "Teaching deepens what you believe. You understand something differently once you've tried to pass it on, and the person you teach becomes part of your roots.",
+  "today": "Think of one thing that has held you up in a hard season. Write down how you'd explain it to someone younger or newer to the path.",
+  "build": "Offer to mentor one person, lead one small group, or share one reflection a month with someone who's asking. Show up regularly rather than perfectly.",
+  "hard": "You don't need to be an expert. Most people want a fellow traveler who's a few steps ahead, not someone with every answer."
+ },
+ "holy|Tithe": {
+  "why": "Giving away part of what you have loosens money's grip and connects you to something larger than your own needs. It's trust you can practice with your hands.",
+  "today": "Choose one cause, church, or person that reflects what you hold sacred. Give something small today, even five dollars, and notice how it feels.",
+  "build": "Set a regular amount or percentage that fits your real budget, and automate it so it happens without a fresh decision each time. Review it once a year.",
+  "hard": "If money is tight, give time, skills, or attention instead. Generosity is about the posture of your heart, not the size of the gift."
+ },
+ "holy|Worship": {
+  "why": "Worship turns your attention from your worries to what is bigger and more beautiful than them. It can happen anywhere, not only in a building.",
+  "today": "Put on one song that stirs something sacred in you, and give it your full attention. Or step outside and take in the sky for two minutes without your phone.",
+  "build": "Make a small space for personal worship at home: a chair, a playlist, a view. Go there a few times a week. Let it be yours, whatever shape it takes.",
+  "hard": "If corporate worship has hurt you, you're allowed to start private and small. Worship is attention and gratitude, and nobody can take that from you.",
+  "story": "Love."
+ },
+ "holy|Scripture": {
+  "why": "Sacred texts hold words people have leaned on for centuries. Reading slowly, the same passage more than once, lets them find you where you are.",
+  "today": "Choose one short passage, like Psalm 23, a favorite poem, or a line from your tradition. Read it three times slowly. Underline the word that catches you.",
+  "build": "Read a little every day from one book or collection, rather than jumping around. Keep a notebook for the lines that stay with you. Share one with someone each week.",
+  "hard": "If your old text feels loaded or painful, start with the Psalms, a poet, or a teacher you trust. Read for comfort before you read for answers.",
+  "story": "I Know That One, Silly"
+ },
+ "meaning|Journal Often": {
+  "why": "Writing helps you find out what you actually think and feel. Meaning often shows up on the page before it shows up in your head.",
+  "today": "Set a timer for five minutes and finish this sentence as many ways as you can: \"What matters to me right now is...\" Don't edit. Just keep the pen moving.",
+  "build": "Write three times a week, same time, same notebook. Every Sunday, reread the week and circle anything that surprises you.",
+  "hard": "If a blank page freezes you, use prompts: What drained me today? What gave me life? What am I avoiding? Bullet points count. Voice notes count.",
+  "story": "Grief Debt"
+ },
+ "meaning|Create Stuff": {
+  "why": "Making something with your hands or imagination is one of the most direct ways humans make meaning. It says: I was here, and this came from me.",
+  "today": "Make one small thing in twenty minutes: a sketch, a meal from scratch, a short poem, a repaired chair. Finish it, even if it's rough.",
+  "build": "Choose one creative outlet and give it a regular slot each week. Keep your materials visible so starting takes no effort. Share something now and then.",
+  "hard": "Perfectionism kills creativity. Aim for finished, not good. The meaning is in the making, not in how it turns out."
+ },
+ "meaning|Plan the Future": {
+  "why": "Having something real to move toward gives today a direction. Meaning lives in anticipation as much as in memory.",
+  "today": "Write down one thing you'd like to happen in the next three months. Then write the smallest first step toward it, and do that step this week.",
+  "build": "Keep a short list of near goals and far hopes. Look at it at the start of each month, and let it change as you change.",
+  "hard": "If the future feels too uncertain to plan, make it small: a visit, a meal, a walk next Saturday. Even a short horizon gives your days shape.",
+  "story": "Birth Plan"
+ },
+ "meaning|Get Counseling": {
+  "why": "A counselor helps you look at the stories you tell yourself about your life, and gently rewrite the ones that are hurting you. It's strength, not weakness.",
+  "today": "Look up one counselor, chaplain, or pastoral counselor near you or online, and read their page. That's the whole task for today.",
+  "build": "Schedule one consultation. Give it three sessions before you decide if the fit is right. It's normal to try more than one person before you find yours.",
+  "hard": "If cost is a barrier, ask about sliding scale fees, community clinics, or an employee assistance program. If you're in crisis, call or text 988 any time.",
+  "story": "My Boundaries Have Gates"
+ },
+ "meaning|Keep Learning": {
+  "why": "Curiosity keeps a life growing. Learning something new reminds you that your story isn't finished yet.",
+  "today": "Pick one question you've always wondered about. Spend fifteen minutes finding out, through a book, a video, or asking someone who knows.",
+  "build": "Choose one subject for a season. Take a class, read a series, or learn a skill alongside a friend. Keep a list of what you've learned.",
+  "hard": "If you're tired, learn in small bites, like a podcast on a walk or one chapter a week. Learning should feed you, not drain you.",
+  "story": "The Impossible Dance of Particles"
+ },
+ "meaning|Write Your Story": {
+  "why": "Putting your life into words, the hard parts and the redemptive parts, helps you see the thread that runs through it. You're more than your worst chapter.",
+  "today": "Write one memory from your life in a single paragraph. Start with where you were and what you could see.",
+  "build": "Write one story a week. Group them into chapters of your life. Consider sharing them with family, since your story is also their inheritance.",
+  "hard": "If painful memories come up, go slowly and write only what you can. Some chapters are best written with a counselor or trusted friend nearby."
+ },
+ "mind|Music": {
+  "why": "Music reaches the nervous system faster than words. The right song can calm you down, lift you up, or let you finally cry.",
+  "today": "Make two short playlists: one for calm, one for energy. Play the one you need for the next ten minutes, and really listen.",
+  "build": "Use music on purpose at your hardest times of day, like the commute home or before bed. Notice which songs actually shift your state, and keep them close.",
+  "hard": "If music brings up grief, that's not a failure. Sometimes the song opens a door that needed opening. Give yourself permission to feel it, then choose something gentler.",
+  "story": "Drift Away"
+ },
+ "mind|Meditation": {
+  "why": "Slow breathing tells your body the danger has passed. It's the fastest calming tool you carry, and it goes everywhere you go.",
+  "today": "Sit where you are. Breathe in through your nose for a count of four, out through your mouth for a count of six. Do this ten times. When your mind wanders, notice it and come back to the count.",
+  "build": "Attach it to something you already do, like right after your morning coffee. Two minutes the first week, five the second. Use a simple timer so your phone doesn't pull you somewhere else.",
+  "hard": "If sitting still makes you more anxious, walk slowly and match your breath to your steps. A wandering mind isn't failure. Coming back is the practice.",
+  "story": "Grounded in Coffee"
+ },
+ "mind|Playing": {
+  "why": "Play has no purpose but joy, and that's exactly why it heals. It moves your mind out of its worry loops and reminds you that you're more than your problems.",
+  "today": "Do one thing just for fun for fifteen minutes: a card game, a puzzle, throwing a ball for the dog, dancing in the kitchen.",
+  "build": "Put play on your calendar like anything else that matters. Find a friend or grandkid who plays well and follow their lead.",
+  "hard": "If play feels silly or undeserved, start with something low stakes and private. Laughter is medicine, not a reward you have to earn.",
+  "story": "The Recovery"
+ },
+ "mind|Mindfulness": {
+  "why": "Mindfulness is simply paying full attention to what's in front of you. It pulls you out of tomorrow's fears and yesterday's replays and back into now.",
+  "today": "Try 5-4-3-2-1: name five things you can see, four you can feel, three you can hear, two you can smell, and one you can taste.",
+  "build": "Pick one daily task, like washing dishes, brushing your teeth, or walking to the car, and do it with full attention every time. Notice without narrating.",
+  "hard": "Your mind will drift constantly. That's normal. Each time you notice and come back, you're strengthening the muscle.",
+  "story": "Grounded in Coffee"
+ },
+ "mind|Reading": {
+  "why": "A good book can hold your mind fully enough to give it rest from its usual loops. It's a vacation your thoughts can take anywhere.",
+  "today": "Read ten pages of something you enjoy, on paper if you can, in a comfortable spot with your phone in another room.",
+  "build": "Keep a book by your bed and one in your bag. Read a little every day, and replace some evening scrolling with pages.",
+  "hard": "If focus is hard right now, try short stories, poetry, audiobooks, or rereading an old favorite. Comfort reading counts."
+ },
+ "mind|Thinking": {
+  "why": "Unhurried thinking time, without a screen or task pulling at you, lets your mind sort itself out. Many problems loosen when you give them room.",
+  "today": "Take a fifteen minute walk or sit on the porch with no phone, no podcast, no task. Let your thoughts go wherever they want.",
+  "build": "Schedule one screen-free block a week. Keep a small notebook handy for the ideas that show up.",
+  "hard": "If silence fills with worry, give your mind a gentle question to hold, like \"What do I need this week?\", and come back to it when you drift."
+ },
+ "community|Family": {
+  "why": "Healthy family relationships are some of the strongest branches a person can have. Investing in them on purpose keeps them from wearing thin.",
+  "today": "Send one family member a message that has nothing to do with logistics. Tell them something you appreciate about them.",
+  "build": "Set one simple recurring connection, like a weekly call, a monthly meal, or a shared text thread. Protect it like an appointment.",
+  "hard": "Not every family relationship is safe or healthy. Invest where there's life, and it's okay to hold boundaries where there isn't.",
+  "story": "The Beautiful Hodgepodge"
+ },
+ "community|Friends": {
+  "why": "Friendships that don't depend on convenience are the ones that hold when life gets hard. They need tending, especially as we get older.",
+  "today": "Text one friend you haven't talked to in a while. Keep it simple: \"Thinking of you. How are you really doing?\"",
+  "build": "Reach out first sometimes. Put a standing coffee or walk on the calendar with one friend. Show up for their hard days too.",
+  "hard": "If you feel like you have no friends right now, start with one acquaintance and one shared activity. Friendships grow from repeated small moments.",
+  "story": "My Boundaries Have Gates"
+ },
+ "community|Neighbors": {
+  "why": "The people who live near you are an underused form of community. Proximity makes it easy to help and be helped.",
+  "today": "Learn one neighbor's name, or wave and say hello to someone you usually just nod at.",
+  "build": "Offer a small help, like bringing in a trash can or sharing garden extras. Invite one neighbor over for coffee in the next month.",
+  "hard": "If you're shy, start with kindness that doesn't require conversation, like shoveling a walk or leaving a note. Connection can build slowly."
+ },
+ "community|Clubs": {
+  "why": "Groups built around a shared interest make belonging easier, because the activity carries the conversation until friendships form.",
+  "today": "Search for one group near you that matches something you enjoy: a choir, book club, walking group, woodshop, or support group.",
+  "build": "Commit to attending three times before you decide. Arrive a few minutes early and stay a few minutes late. That's where connection happens.",
+  "hard": "Walking into a new room alone is hard. Bring a friend the first time, or email the organizer ahead so someone expects you."
+ },
+ "community|Colleagues": {
+  "why": "You spend much of your life at work. Real, human relationships there make hard days lighter and good days better.",
+  "today": "Ask one coworker a question that isn't about work, and listen to the answer.",
+  "build": "Eat lunch with someone once a week. Notice and name good work when you see it. Check on the colleague who seems to be struggling.",
+  "hard": "If your workplace is tense or lonely, find one safe person. One real connection can change how a whole job feels."
+ },
+ "community|Faith": {
+  "why": "A faith community can be a real support system: people who pray for you, bring meals, and sit with you. It's different from your personal connection to the holy, and both matter.",
+  "today": "If you have a faith community, reach out to one person there this week. If you don't, write down what you'd want from one.",
+  "build": "Join something small inside the larger group, like a study group, prayer circle, or service team. Belonging happens in small circles.",
+  "hard": "If church has wounded you, you don't have to go back to the same place. Look for communities known for welcome, or gather a few people who share your values.",
+  "story": "The Atypical Atheist"
+ },
+ "body|Breathe": {
+  "why": "Your breath is the fastest lever you have on your nervous system. Slow breathing lowers your heart rate and tells your body it's safe.",
+  "today": "Try box breathing: in for four, hold for four, out for four, hold for four. Repeat four times.",
+  "build": "Pair slow breathing with daily moments, like stoplights, before meals, or before you walk into a hard conversation. Small doses add up.",
+  "hard": "If holding your breath feels uncomfortable, skip the holds. Just make the exhale longer than the inhale.",
+  "story": "Grounded in Coffee"
+ },
+ "body|Food": {
+  "why": "Food can nourish or numb. Eating real food with some attention gives your body steady fuel and your mind a steadier mood.",
+  "today": "Eat one meal sitting down, without a screen, and notice the taste and texture. Add one fruit or vegetable to one meal.",
+  "build": "Plan a few simple meals for the week so you're not deciding when you're exhausted. Keep easy, nourishing snacks within reach.",
+  "hard": "This isn't about dieting or rules. If your relationship with food feels painful or out of control, talking with your doctor or a counselor is a strong first step."
+ },
+ "body|Sleep": {
+  "why": "Sleep is when your body and mind repair themselves. Almost everything else in this checkup gets harder without it.",
+  "today": "Pick a bedtime tonight and start winding down thirty minutes before: lights low, screens away, something calm to read.",
+  "build": "Keep the same wake time every day, even weekends. Make your bedroom for sleep only: dark, cool, and quiet. Save late snacks and news for earlier.",
+  "hard": "If worry keeps you awake, keep a notepad by the bed to write it down and set it aside. If sleep problems last weeks, talk with your doctor."
+ },
+ "body|Medicine": {
+  "why": "Medical care, prescriptions, and supplements are real tools, not last resorts or signs of weakness. Using them well is part of caring for your body.",
+  "today": "Write down any checkup, refill, or symptom you've been putting off. Make one call or send one message about it.",
+  "build": "Keep a simple list of your medications and questions for your next appointment. Set reminders so doses don't slip.",
+  "hard": "If shame or fear keeps you from the doctor, bring a trusted person with you. Your body deserves care, not judgment."
+ },
+ "body|Movement": {
+  "why": "Moving your body clears your head, lifts your mood, and helps you sleep. Walking counts. Gentle counts. Imperfect counts.",
+  "today": "Take a ten minute walk, inside or out. Notice your feet, your breath, and what you see.",
+  "build": "Aim for movement most days. Choose something you actually enjoy, like walking, stretching, dancing, gardening, or swimming, and add a few minutes each week.",
+  "hard": "If your body has limits right now, move what you can: chair exercises, stretching in bed, slow steps. Check with your doctor before starting something new.",
+  "story": "Grief Debt"
+ },
+ "body|Chakras": {
+  "why": "Some people find it helpful to think of the body as an energy system. Practices built on this idea often bring together breath, attention, and gentle movement.",
+  "today": "If this resonates with you, try a short guided body scan: move your attention slowly from your feet to the top of your head, noticing where you feel tight or open.",
+  "build": "Explore a gentle yoga, tai chi, or energy-based class with a teacher you trust. Pay attention to what actually helps you feel more at home in your body.",
+  "hard": "If this doesn't fit your beliefs, skip it. Any practice that helps you notice and care for your body serves the same purpose."
+ },
+ "hope|Volunteer": {
+  "why": "Hope grows from seeing change happen with your own eyes. Serving somewhere lets you witness it, and be part of it.",
+  "today": "Look up one place near you that needs help: a food shelf, a school, a hospice, an animal shelter. Read about what they need.",
+  "build": "Commit to a regular shift, even monthly. Consistency lets you see change over time and build friendships with the people you serve alongside.",
+  "hard": "If your energy is low, start small and short. One afternoon is enough to begin. Serving should feed your hope, not empty it.",
+  "story": "The Beautiful Hodgepodge"
+ },
+ "hope|Pay It Forward": {
+  "why": "A small, unearned kindness breaks the idea that the world only takes. Giving one reminds you there's still good moving around out there.",
+  "today": "Do one anonymous kindness: pay for the coffee behind you, leave a generous tip, or write an encouraging note.",
+  "build": "Make it a weekly habit. Keep a small list of ideas so you're ready when the moment comes.",
+  "hard": "It doesn't need to cost money. Holding a door, letting someone merge, or listening fully all count."
+ },
+ "hope|Be Generous": {
+  "why": "Generosity is hope in action. Giving before you feel ready trains your heart to trust there will be enough.",
+  "today": "Give one thing away: time, money, an item you don't need, or your full attention for a conversation.",
+  "build": "Decide what generosity looks like for you this season, and plan for it so it happens even on tired days.",
+  "hard": "If you're depleted, generosity toward yourself counts too. Rest is sometimes the most generous thing you can give the people around you."
+ },
+ "hope|Provide Care": {
+  "why": "Tending someone or something, like a person, a pet, or a garden, is a quiet hope practice. Care assumes there's a tomorrow worth preparing for.",
+  "today": "Care for one living thing on purpose today: water a plant, walk the dog slowly, check on someone who's alone.",
+  "build": "Take on one small, regular act of care, like a weekly call to an elder or a garden bed of your own.",
+  "hard": "If you're already a caregiver and running on empty, this practice is a reminder to receive care too. Ask for one specific kind of help this week.",
+  "story": "If She Is Still Here"
+ },
+ "hope|Inspire Hope": {
+  "why": "Being the reason someone else feels hope has a way of refilling your own. Hope multiplies when it's shared.",
+  "today": "Tell one person something specific you believe about their future, or share a story of something that turned out better than expected.",
+  "build": "Look for one chance each week to encourage someone who's struggling. Share good news as readily as bad.",
+  "hard": "You don't need to feel hopeful to offer hope. Sometimes speaking it out loud is how it comes back to you.",
+  "story": "He Was Praying Too"
+ },
+ "hope|Make Peace": {
+  "why": "An unresolved conflict quietly drains hope. Repairing even one relationship can make the future feel open again.",
+  "today": "Think of one strained relationship. Write down what you'd want to say if you knew it would be received well. You don't have to send it.",
+  "build": "When you're ready, reach out with a small step: an apology, a question, an invitation. Let it take time. Peace is often built in stages.",
+  "hard": "Some relationships aren't safe to repair. Making peace can also mean letting go inside yourself, with or without the other person.",
+  "story": "He Came to Collect"
+ },
+ "hope|Capture the Moment": {
+  "why": "Hopeful moments are easy to forget when life gets dark. Writing them down builds a record you can return to when you need it most.",
+  "today": "Write down one moment from today that gave you even a small lift, and why it landed.",
+  "build": "Keep a hope journal, or a note on your phone. Add three lines a week. Reread it on hard days.",
+  "hard": "If nothing felt hopeful today, write something that was simply okay. Small counts. Ordinary counts.",
+  "story": "Total Bliss"
+ }
+};
+
+function guideHtml(key, name, withStory) {
+  const g = GUIDES[key + '|' + name];
+  if (!g) return '';
+  let s = `<p><strong>Why it helps.</strong> ${g.why}</p>
+    <p><strong>Try it today.</strong> ${g.today}</p>
+    <p><strong>Build it.</strong> ${g.build}</p>
+    <p><strong>If it's hard.</strong> ${g.hard}</p>`;
+  if (withStory && g.story) {
+    const st = findStory(g.story);
+    if (st) s += `<p><strong>From Grounded.</strong> <a class="text-link" href="${st.url || GROUNDED_URL}" target="_blank" rel="noopener">${st.title}</a></p>`;
+  }
+  return s;
+}
+
+function toggleGuide(btn) {
+  const g = btn.nextElementSibling;
+  const open = g.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  btn.innerHTML = open ? 'Hide guide &uarr;' : 'How to do this &darr;';
+}
+
 // =====================================================================
 // ICONS
 // =====================================================================
@@ -989,27 +1377,73 @@ function partIcon(d, size) { return icon(d.icon, size); }
 // =====================================================================
 const TREE_SHAPES = {
   roots: {
-    kind: 'stroke', dx: 0, dy: 16, delay: 0,
+    kind: 'taper', dx: 0, dy: 16, delay: 0,
     paths: [
-      ['M200 299 C199 332 201 362 198 406', 9], ['M196 299 C180 323 156 341 120 358', 8], ['M204 299 C220 323 244 341 280 358', 8],
-      ['M192 299 C160 306 124 313 82 328', 6.5], ['M208 299 C240 306 276 313 318 328', 6.5],
-      ['M158 338 C149 354 145 370 134 388', 4.5], ['M242 338 C251 354 255 370 266 388', 4.5],
-      ['M199 352 C189 366 183 380 175 394', 4], ['M200 360 C210 372 216 384 224 396', 4],
-      ['M118 318 C106 329 96 336 84 346', 3.5], ['M282 318 C294 329 304 336 316 346', 3.5]
+      ['M200 299 C199 332 201 362 198 404', 11, 2], ['M196 299 C180 323 156 341 120 358', 10, 2], ['M204 299 C220 323 244 341 280 358', 10, 2],
+      ['M192 299 C160 306 124 313 82 328', 8, 1.6], ['M208 299 C240 306 276 313 318 328', 8, 1.6],
+      ['M158 338 C149 354 145 370 134 388', 5.5, 1.2], ['M242 338 C251 354 255 370 266 388', 5.5, 1.2],
+      ['M199 352 C189 366 183 380 175 394', 5, 1], ['M200 360 C210 372 216 384 224 396', 5, 1],
+      ['M118 318 C106 329 96 336 84 346', 4.5, 1], ['M282 318 C294 329 304 336 316 346', 4.5, 1],
+      ['M121 357 C111 363 105 371 99 382', 1.8, 0.5], ['M279 357 C289 363 295 371 301 382', 1.8, 0.5],
+      ['M84 327 C74 329 66 334 57 341', 1.8, 0.5], ['M316 327 C326 329 334 334 343 341', 1.8, 0.5],
+      ['M135 387 C131 395 129 402 125 410', 1.8, 0.5], ['M265 387 C269 395 271 402 275 410', 1.8, 0.5],
+      ['M176 393 C171 399 167 403 161 407', 1.8, 0.5], ['M223 395 C228 401 232 404 239 407', 1.8, 0.5],
+      ['M198 402 C196 408 193 412 188 415', 1.8, 0.5], ['M198 402 C201 408 204 411 209 413', 1.8, 0.5],
+      ['M150 336 C140 339 133 344 126 350', 1.8, 0.5], ['M250 336 C260 339 267 344 274 350', 1.8, 0.5]
     ]
   },
   trunk: { kind: 'fill', dx: 0, dy: 12, delay: 0.25, paths: ['M184 292 C189 262 191 232 192 196 L208 196 C209 232 211 262 216 292 Z'] },
-  bark: { kind: 'fill', dx: 0, dy: 0, delay: 0.45, split: true, paths: ['M170 292 C178 270 181 238 182 196 L188 196 C188 232 186 262 180 292 Z', 'M230 292 C222 270 219 238 218 196 L212 196 C212 232 214 262 220 292 Z'] },
-  branches: {
-    kind: 'stroke', dx: 0, dy: -8, delay: 0.65, seam: true,
-    paths: [['M198 204 C176 184 154 168 122 156', 7.5], ['M200 200 C200 170 200 140 200 100', 7.5], ['M202 204 C224 184 246 168 278 156', 7.5], ['M196 200 C182 172 170 144 166 112', 6], ['M204 200 C218 172 230 144 234 112', 6]]
+  bark: {
+    kind: 'fill', dx: 0, dy: 0, delay: 0.45,
+    paths: ['M170 292 C178 270 181 238 182 196 L188 196 C188 232 186 262 180 292 Z', 'M230 292 C222 270 219 238 218 196 L212 196 C212 232 214 262 220 292 Z'],
+    grain: ['M175.5 287 C180 266 183 238 185 202', 'M224.5 287 C220 266 217 238 215 202', 'M178 262 C179.5 256 180.5 251 181.5 246', 'M222 262 C220.5 256 219.5 251 218.5 246']
   },
-  leaves: { kind: 'circles', dx: 0, dy: -12, delay: 0.85, circles: [[200,100,58],[146,128,46],[254,128,46],[168,84,42],[232,84,42],[116,158,32],[284,158,32],[200,146,50],[158,168,30],[242,168,30]] },
+  branches: {
+    kind: 'taper', dx: 0, dy: -8, delay: 0.65, seam: true,
+    paths: [
+      ['M198 204 C176 184 154 168 122 156', 11, 3], ['M200 200 C200 170 200 140 200 100', 11, 3], ['M202 204 C224 184 246 168 278 156', 11, 3],
+      ['M196 200 C182 172 170 144 166 112', 8, 2.5], ['M204 200 C218 172 230 144 234 112', 8, 2.5],
+      ['M150 166 C138 152 134 140 134 126', 4.5, 1.5], ['M250 166 C262 152 266 140 266 126', 4.5, 1.5],
+      ['M200 132 C191 120 186 108 184 94', 4.5, 1.5], ['M200 132 C209 120 214 108 216 94', 4.5, 1.5]
+    ]
+  },
+  leaves: { kind: 'canopy', dx: 0, dy: -12, delay: 0.85, circles: [[200,100,58],[146,128,46],[254,128,46],[168,84,42],[232,84,42],[116,158,32],[284,158,32],[200,146,50],[158,168,30],[242,168,30]] },
   fruit: { kind: 'fruit', dx: 0, dy: -18, delay: 1.1, circles: [[158,118],[238,100],[214,154],[126,160],[272,152],[184,72],[252,62]] }
 };
 const PIECE_FOR = { holy: 'roots', meaning: 'trunk', mind: 'bark', community: 'branches', body: 'leaves', hope: 'fruit' };
 const DRAW_ORDER = ['body', 'community', 'hope', 'mind', 'meaning', 'holy'];
-const HERO_OPACITY = { holy: 0.95, meaning: 1, mind: 0.78, community: 0.92, body: 0.86, hope: 1 };
+const HERO_COLORS = { holy: '#E8D6B6', meaning: '#F3E7D1', mind: '#DECAA9', community: '#EEE0C6', body: '#FAF6EE', hope: '#FFFFFF' };
+
+// Turns a single curve into a filled shape that tapers from w0 to w1
+function taperPath(d, w0, w1) {
+  const n = d.match(/-?\d+(\.\d+)?/g).map(Number);
+  const [x0, y0, x1, y1, x2, y2, x3, y3] = n;
+  const pt = t => { const u = 1 - t; return [u*u*u*x0 + 3*u*u*t*x1 + 3*u*t*t*x2 + t*t*t*x3, u*u*u*y0 + 3*u*u*t*y1 + 3*u*t*t*y2 + t*t*t*y3]; };
+  const der = t => { const u = 1 - t; return [3*u*u*(x1-x0) + 6*u*t*(x2-x1) + 3*t*t*(x3-x2), 3*u*u*(y1-y0) + 6*u*t*(y2-y1) + 3*t*t*(y3-y2)]; };
+  const N = 18, left = [], right = [];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, [px, py] = pt(t);
+    const [dx, dy] = der(t), L = Math.hypot(dx, dy) || 1;
+    const w = (w0 + (w1 - w0) * t) / 2;
+    left.push([px - dy / L * w, py + dx / L * w]);
+    right.push([px + dy / L * w, py - dx / L * w]);
+  }
+  const f = p => p[0].toFixed(1) + ' ' + p[1].toFixed(1);
+  return 'M' + left.map(f).join(' L') + ' L' + f(pt(1)) + ' L' + right.reverse().map(f).join(' L') + ' Z';
+}
+
+// Leafy, scalloped canopy edge built around the outer circles
+function canopyCircles(circles) {
+  const out = circles.map(c => [c[0], c[1], c[2]]);
+  circles.forEach(([cx, cy, r]) => {
+    for (let a = 0; a < 360; a += 20) {
+      const rad = a * Math.PI / 180, px = cx + Math.cos(rad) * (r - 3), py = cy + Math.sin(rad) * (r - 3);
+      const covered = circles.some(o => o !== undefined && !(o[0] === cx && o[1] === cy) && Math.hypot(px - o[0], py - o[1]) < o[2] - 4);
+      if (!covered) out.push([px, py, 7 + r * 0.1]);
+    }
+  });
+  return out;
+}
 
 function puzzleTreeSvg(opts) {
   const o = Object.assign({ variant: 'color', scores: null, interactive: false, seam: 'var(--bg)', assemble: false, cls: '' }, opts);
@@ -1020,27 +1454,34 @@ function puzzleTreeSvg(opts) {
   DRAW_ORDER.forEach(key => {
     const d = DOMAIN_BY_KEY[key];
     const shape = TREE_SHAPES[PIECE_FOR[key]];
-    let color, pieceOpacity = 1;
-    if (o.variant === 'hero') { color = '#FAF7F2'; pieceOpacity = HERO_OPACITY[key]; }
-    else { color = d.color; }
+    const hero = o.variant === 'hero';
+    const color = hero ? HERO_COLORS[key] : d.color;
+    let pieceOpacity = 1;
     if (o.variant === 'score' && o.scores) pieceOpacity = 0.2 + 0.8 * ((o.scores[key] || 5) / 10);
     let inner = '';
-    if (shape.kind === 'stroke') {
-      if (shape.seam) inner += shape.paths.map(p => `<path d="${p[0]}" style="stroke:${o.seam};" stroke-width="${p[1] + 6}" stroke-linecap="round" fill="none"/>`).join('');
-      inner += shape.paths.map(p => `<path d="${p[0]}" style="stroke:${color};" stroke-width="${p[1]}" stroke-linecap="round" fill="none"/>`).join('');
+    if (shape.kind === 'taper') {
+      if (shape.seam) inner += shape.paths.map(p => `<path d="${taperPath(p[0], p[1] + 6, p[2] + 4)}" style="fill:${o.seam};"/>`).join('');
+      inner += shape.paths.map(p => `<path d="${taperPath(p[0], p[1], p[2])}" style="fill:${color};"/>`).join('');
     } else if (shape.kind === 'fill') {
       inner += shape.paths.map(p => `<path d="${p}" style="fill:${color};stroke:${o.seam};paint-order:stroke;" stroke-width="5" stroke-linejoin="round"/>`).join('');
-    } else if (shape.kind === 'circles') {
-      inner += shape.circles.map(c => `<circle cx="${c[0]}" cy="${c[1]}" r="${c[2]}" style="fill:${color};"/>`).join('');
+      if (shape.grain) inner += shape.grain.map(p => `<path d="${p}" style="stroke:${o.seam};" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.55"/>`).join('');
+    } else if (shape.kind === 'canopy') {
+      inner += canopyCircles(shape.circles).map(c => `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="${c[2].toFixed(1)}" style="fill:${color};"/>`).join('');
+      if (!hero) inner += `<circle cx="178" cy="82" r="30" fill="#fff" opacity="0.07"/><circle cx="140" cy="122" r="22" fill="#fff" opacity="0.06"/>`;
     } else if (shape.kind === 'fruit') {
-      inner += shape.circles.map(c => `<circle cx="${c[0]}" cy="${c[1]}" r="8" style="fill:${color};stroke:${o.seam};" stroke-width="3.5"/>`).join('');
+      inner += shape.circles.map(([x, y]) => `
+        <path d="M${x} ${y - 7} C${x + 1} ${y - 11} ${x + 3} ${y - 13} ${x + 6} ${y - 14}" style="stroke:${o.seam};" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M${x} ${y - 7} C${x + 1} ${y - 11} ${x + 3} ${y - 13} ${x + 6} ${y - 14}" style="stroke:${color};" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <circle cx="${x}" cy="${y}" r="8" style="fill:${color};stroke:${o.seam};" stroke-width="3.5"/>
+        ${hero ? '' : `<circle cx="${x - 2.6}" cy="${y - 2.6}" r="2.2" fill="#fff" opacity="0.55"/>`}`).join('');
     }
     const label = `${d.part}, ${d.name}${o.scores ? ', ' + o.scores[key] + ' of 10' : ''}`;
     const attrs = o.interactive ? `tabindex="0" role="button" aria-label="${label}"` : '';
     const anim = o.assemble ? `style="--dx:${shape.dx}px;--dy:${shape.dy}px;--delay:${shape.delay}s;"` : '';
-    pieces += `<g class="piece-wrap" ${anim}><g class="piece${o.interactive ? ' interactive' : ''}" data-key="${key}" ${attrs} opacity="${pieceOpacity.toFixed(2)}"><title>${label}</title>${inner}</g></g>`;
+    const sway = (o.assemble && hero && (key === 'body' || key === 'hope')) ? ' sway' : '';
+    pieces += `<g class="piece-wrap${sway}" ${anim}><g class="piece${o.interactive ? ' interactive' : ''}" data-key="${key}" ${attrs} opacity="${pieceOpacity.toFixed(2)}"><title>${label}</title>${inner}</g></g>`;
   });
-  return `<svg class="${o.cls}${o.assemble ? ' assemble' : ''}" viewBox="40 30 320 390" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soul Tree with six parts">${ground}${pieces}</svg>`;
+  return `<svg class="${o.cls}${o.assemble ? ' assemble' : ''}" viewBox="40 30 320 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soul Tree with six parts">${ground}${pieces}</svg>`;
 }
 
 function mountTree(slotId, opts, onPiece) {
@@ -1197,10 +1638,14 @@ function renderCarePlanBuilder(mode) {
       <div class="practice-picker">
         <div class="practice-picker-label">Choose 1 to 3 practices to commit to</div>
         ${d.restore.map(r => `
-          <label class="practice-option">
-            <input type="checkbox" name="cp-${mode}-${d.key}" value="${r[0]}" onchange="enforcePracticeLimit(this,'${mode}','${d.key}')">
-            <span class="practice-option-text"><strong>${r[0]}.</strong> ${r[1]}</span>
-          </label>`).join('')}
+          <div class="practice-item">
+            <label class="practice-option">
+              <input type="checkbox" name="cp-${mode}-${d.key}" value="${r[0]}" onchange="enforcePracticeLimit(this,'${mode}','${d.key}')">
+              <span class="practice-option-text"><strong>${r[0]}.</strong> ${r[1]}</span>
+            </label>
+            <button type="button" class="guide-toggle" aria-expanded="false" onclick="toggleGuide(this)">How to do this &darr;</button>
+            <div class="guide">${guideHtml(d.key, r[0], mode === 'client')}</div>
+          </div>`).join('')}
         <div class="practice-limit-note">Select up to 3. Or write your own below.</div>
         <input type="text" class="practice-custom" id="cp-${mode}-${d.key}-custom" aria-label="${d.part} custom practice" placeholder="Your own practice or next step...">
         ${mode === 'client' ? storyLinksHtml(d) : ''}
@@ -1232,7 +1677,7 @@ function generateCarePlanDoc(mode) {
         </div>
         <div class="care-plan-practices">
           ${selected.length === 0 && !custom ? '<p style="font-size:14px;color:var(--ink-soft);font-style:italic;">No practices selected yet for this part.</p>' : ''}
-          ${selected.map(s => `<div class="care-plan-practice-item" style="--domain-color:${d.color};">${escapeHtml(s)}</div>`).join('')}
+          ${selected.map(s => `<div class="care-plan-practice-item" style="--domain-color:${d.color};"><strong>${escapeHtml(s)}</strong></div><div class="care-plan-guide" style="--domain-color:${d.color};">${guideHtml(d.key, s, isClient)}</div>`).join('')}
           ${custom ? `<div class="care-plan-practice-item" style="--domain-color:${d.color};">${escapeHtml(custom)}</div>` : ''}
         </div>
         ${storyLine}
